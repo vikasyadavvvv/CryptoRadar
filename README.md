@@ -4,7 +4,7 @@
 
 ## 🚀 Live Demo
 
-[🔗 Click here to view live](https://your-live-link.com)
+[🔗 Click here to view live]([https://your-live-link.com](https://cryptoradarr.netlify.app/))
 
 ## 📸 Preview
 
