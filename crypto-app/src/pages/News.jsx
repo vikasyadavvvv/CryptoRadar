@@ -12,14 +12,15 @@ const News = () => {
           'https://newsapi.org/v2/everything?q=cryptocurrency&apiKey=9144889b89aa4c72adbbfa4f88c92f7d'
         );
         const data = await response.json();
-        setNewsData(data.articles);
-        setLoading(false);
+        setNewsData(data?.articles || []);
       } catch (error) {
         console.error('Error fetching news:', error);
+        setNewsData([]);
+      } finally {
         setLoading(false);
       }
     };
-
+    
     fetchNews();
   }, []);
 
