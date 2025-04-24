@@ -1,4 +1,6 @@
 import React, { useEffect, useState } from "react";
+import Spinner from '../components/Spinner';
+
 
 const News = () => {
   const [articles, setArticles] = useState([]);
@@ -35,7 +37,7 @@ const News = () => {
         Latest Crypto News
       </h2>
 
-      {loading && <div className="text-center text-gray-500">Loading...</div>}
+      {loading && <div className="text-center"><Spinner/></div>}
       {error && <div className="text-center text-red-500">{`Error: ${error}`}</div>}
       {articles.length === 0 && !loading && !error ? (
         <p className="text-center text-gray-500">No news available</p>
