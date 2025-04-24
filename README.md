@@ -2,15 +2,7 @@
 
 **Crypto Rada** is a modern, responsive, and real-time cryptocurrency tracker built using **React**, **Redux**, **Tailwind CSS**, and the **CoinGecko API**. Stay up to date with real-time prices, market trends, and news in the crypto world.
 
-## 🚀 Live Demo
 
-https://your-live-link.com](https://cryptoradarr.netlify.app/
-
-## 📸 Preview
-
-![Crypto Rada Preview](./preview.png)
-
----
 
 ## 🛠️ Tech Stack
 
