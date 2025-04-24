@@ -11,16 +11,27 @@ const News = () => {
         const response = await fetch(
           'https://newsapi.org/v2/everything?q=cryptocurrency&apiKey=9144889b89aa4c72adbbfa4f88c92f7d'
         );
+        
+        if (!response.ok) {
+          // If the response isn't OK, log the error message
+          const errorMessage = `Error: ${response.status} - ${response.statusText}`;
+          console.error(errorMessage);
+          return;
+        }
+        
         const data = await response.json();
-        setNewsData(data?.articles || []);
+        if (data?.articles) {
+          setNewsData(data.articles);
+        } else {
+          console.error("No articles found in the response.");
+        }
       } catch (error) {
         console.error('Error fetching news:', error);
-        setNewsData([]);
       } finally {
         setLoading(false);
       }
     };
-    
+     
     fetchNews();
   }, []);
 
