@@ -45,7 +45,7 @@ const CoinDetail = () => {
 
   if (status === 'loading') return <div className="flex justify-center items-center h-64"><Spinner /></div>;
   if (status === 'failed') return <p className="text-center text-red-500">{error}</p>;
-  if (!selectedCoin) return <p className="text-center"><Spinner /></p>;
+  if (!selectedCoin) return <div className="text-center"><Spinner /></div>;
 
   const { name, symbol, market_data, image } = selectedCoin;
 
