@@ -11,10 +11,12 @@ import {
   PointElement,
   Tooltip,
   Legend,
+  Filler   // 🛠️ Added Filler here
 } from 'chart.js';
 import { fetchCoinDetails, fetchMarketChart, setCurrency } from '../features/cryptoSlice';
 
-ChartJS.register(LineElement, CategoryScale, LinearScale, PointElement, Tooltip, Legend);
+// 🛠️ Register Filler plugin along with others
+ChartJS.register(LineElement, CategoryScale, LinearScale, PointElement, Tooltip, Legend, Filler);
 
 const CoinDetail = () => {
   const dispatch = useDispatch();
@@ -53,7 +55,7 @@ const CoinDetail = () => {
       {
         label: `Price (${currency.toUpperCase()})`,
         data: marketChart.map(([_, price]) => (price * (conversionRates[currency] || 1)).toFixed(2)),
-        fill: true,
+        fill: true, // 🛠️ this needs Filler plugin
         backgroundColor: 'rgba(59, 130, 246, 0.1)',
         borderColor: '#3b82f6',
         pointBackgroundColor: '#2563eb',
@@ -137,4 +139,5 @@ const CoinDetail = () => {
 };
 
 export default CoinDetail;
+
 
